@@ -1,6 +1,6 @@
 {
   "name": "find-paris-restaurant",
   "description": "Find a restaurant in Paris matching your requirements using live web search",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": { "name": "Guobi Wu" }
 }

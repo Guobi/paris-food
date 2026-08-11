@@ -49,10 +49,12 @@ Give 2-4 ranked options, not an exhaustive list. For each, include:
 - Address
 - Working hours
 - A photo of the restaurant (find a URL from the source page, its Google/Maps listing, or official website — omit the image if none can be found, don't invent one)
+- What to order: one signature dish, if one is mentioned in the sources or clearly associated with the place — omit rather than guess
 - Why it fits their requirements (one line)
 - Approximate price range
 - Anything time-sensitive: needs reservation, closed certain days, etc.
 - A source or link if available
+- A map link: `https://www.google.com/maps/search/?api=1&query=<url-encoded name + address>`
 
 If nothing fits all constraints well, say so plainly and offer the closest tradeoffs rather than forcing a match.
 
@@ -63,5 +65,7 @@ In addition to the chat reply, save the results as a standalone HTML file so the
 1. Copy [template.html](template.html) as a starting point.
 2. Duplicate the `.restaurant` block once per recommended restaurant, filling in both columns — the left (`.col.fr`) in French, the right (`.col.lang`) in the user's chosen language, including labels ("Adresse"/local translation, "Horaires"/local translation, etc.).
 3. Fill `{{PHOTO_URL}}` with a real photo URL found during search; if none is available, remove that restaurant's `<img>` tag rather than leaving a placeholder or fake URL.
-4. Set `{{TITLE_FR}}` / `{{TITLE_LANG}}` to something like "Nos recommandations" / the equivalent in the user's language.
-5. Save the finished file in the current working directory as `restaurants-<short-slug>.html` (e.g. `restaurants-marais-ramen.html`), and tell the user the file path.
+4. Fill `{{MAP_URL}}` with a Google Maps search link built from the name and address (`https://www.google.com/maps/search/?api=1&query=...`), and `{{MAP_LABEL_FR}}` / `{{MAP_LABEL_LANG}}` with "Voir sur la carte" / the equivalent in the user's language.
+5. Fill `{{WHAT_TO_ORDER_FR}}` / `{{WHAT_TO_ORDER_LANG}}` with a signature dish if the sources mention one; otherwise remove that `<p>` line in both columns rather than guessing.
+6. Set `{{TITLE_FR}}` / `{{TITLE_LANG}}` to something like "Nos recommandations" / the equivalent in the user's language.
+7. Save the finished file in the current working directory as `restaurants-<short-slug>.html` (e.g. `restaurants-marais-ramen.html`), and tell the user the file path. The template includes print-friendly styling, so mention the file can be printed directly (e.g. via the browser's print dialog) as a physical handout.

@@ -75,6 +75,13 @@
     .columns { grid-template-columns: 1fr; }
     .col.fr { border-right: none; border-bottom: 1px solid var(--border); }
   }
+  @media print {
+    body { padding: 0; background: #fff; }
+    .restaurant { break-inside: avoid; border: 1px solid #999; box-shadow: none; margin-bottom: 1rem; }
+    .restaurant-photo { max-height: 220px; }
+    .col a { color: #2b2620; text-decoration: none; }
+    .col a::after { content: " (" attr(href) ")"; font-size: 0.75rem; color: var(--muted); }
+  }
 </style>
 </head>
 <body>
@@ -91,8 +98,10 @@
       <p><span class="label">Adresse :</span> {{ADDRESS}}</p>
       <p><span class="label">Horaires :</span> {{HOURS_FR}}</p>
       <p><span class="label">Prix :</span> {{PRICE_FR}}</p>
+      <p><span class="label">À commander :</span> {{WHAT_TO_ORDER_FR}}</p>
       <p>{{WHY_FR}}</p>
       <p>{{NOTES_FR}}</p>
+      <p><a href="{{MAP_URL}}" target="_blank">{{MAP_LABEL_FR}}</a></p>
       <p><a href="{{SOURCE_URL}}" target="_blank">{{SOURCE_LABEL_FR}}</a></p>
     </div>
     <div class="col lang">
@@ -101,8 +110,10 @@
       <p><span class="label">{{ADDRESS_LABEL_LANG}}</span> {{ADDRESS}}</p>
       <p><span class="label">{{HOURS_LABEL_LANG}}</span> {{HOURS_LANG}}</p>
       <p><span class="label">{{PRICE_LABEL_LANG}}</span> {{PRICE_LANG}}</p>
+      <p><span class="label">{{ORDER_LABEL_LANG}}</span> {{WHAT_TO_ORDER_LANG}}</p>
       <p>{{WHY_LANG}}</p>
       <p>{{NOTES_LANG}}</p>
+      <p><a href="{{MAP_URL}}" target="_blank">{{MAP_LABEL_LANG}}</a></p>
       <p><a href="{{SOURCE_URL}}" target="_blank">{{SOURCE_LABEL_LANG}}</a></p>
     </div>
   </div>
