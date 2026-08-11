@@ -39,6 +39,8 @@ From any Claude Code session:
 
 If the install summary says `Run /reload-plugins to activate.`, run that command. The skill is then available as `/find-paris-restaurant:find-paris-restaurant`, and Claude will also invoke it automatically for restaurant-recommendation requests.
 
+Claude Code copies the plugin into a local cache at `~/.claude/plugins/cache/` rather than running it from this repo — it doesn't touch the user's own project or `~/.claude/skills/`. Each installed version gets its own cache directory; old versions are cleaned up automatically ~14 days after an update.
+
 ### Update
 
 When a new version is pushed to this repo:
