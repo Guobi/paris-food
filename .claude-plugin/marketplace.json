@@ -1,0 +1,10 @@
+{
+  "name": "paris-food",
+  "plugins": [
+    {
+      "name": "find-paris-restaurant",
+      "source": "./find-paris-restaurant-plugin",
+      "description": "Find a restaurant in Paris matching your requirements using live web search"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 ---
-name: find-restaurant
+name: find-paris-restaurant
 description: Find a good restaurant in Paris matching a person's requirements (cuisine, budget, neighborhood, occasion, dietary needs, etc.) using live web search. Use when the user asks for a restaurant recommendation, where to eat, or help picking a place to dine in Paris.
 ---
 
