@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recommandations de restaurants / {{LANGUAGE_NAME}}</title>
+<style>
+  :root {
+    --border: #e2ddd4;
+    --accent: #a3312a;
+    --muted: #6b6259;
+    --bg: #fdfbf7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2rem;
+    font-family: Georgia, "Noto Serif", serif;
+    background: var(--bg);
+    color: #2b2620;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .restaurant {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin: 0 auto 2rem auto;
+    max-width: 1100px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .restaurant-photo {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    display: block;
+    background: #eee;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .col {
+    padding: 1.25rem 1.5rem;
+  }
+  .col.fr { border-right: 1px solid var(--border); }
+  .col h2 {
+    font-size: 1.15rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--accent);
+  }
+  .col .neighborhood {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  .col p {
+    margin: 0.4rem 0;
+    line-height: 1.45;
+    font-size: 0.95rem;
+  }
+  .col .label {
+    font-weight: bold;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .col a { color: var(--accent); }
+  @media (max-width: 700px) {
+    .columns { grid-template-columns: 1fr; }
+    .col.fr { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+
+<h1>{{TITLE_FR}} / {{TITLE_LANG}}</h1>
+
+<!-- Repeat this .restaurant block once per recommended restaurant -->
+<div class="restaurant">
+  <img class="restaurant-photo" src="{{PHOTO_URL}}" alt="{{NAME}}">
+  <div class="columns">
+    <div class="col fr">
+      <h2>{{NAME}}</h2>
+      <div class="neighborhood">{{NEIGHBORHOOD_FR}}</div>
+      <p><span class="label">Adresse :</span> {{ADDRESS}}</p>
+      <p><span class="label">Horaires :</span> {{HOURS_FR}}</p>
+      <p><span class="label">Prix :</span> {{PRICE_FR}}</p>
+      <p>{{WHY_FR}}</p>
+      <p>{{NOTES_FR}}</p>
+      <p><a href="{{SOURCE_URL}}" target="_blank">{{SOURCE_LABEL_FR}}</a></p>
+    </div>
+    <div class="col lang">
+      <h2>{{NAME}}</h2>
+      <div class="neighborhood">{{NEIGHBORHOOD_LANG}}</div>
+      <p><span class="label">{{ADDRESS_LABEL_LANG}}</span> {{ADDRESS}}</p>
+      <p><span class="label">{{HOURS_LABEL_LANG}}</span> {{HOURS_LANG}}</p>
+      <p><span class="label">{{PRICE_LABEL_LANG}}</span> {{PRICE_LANG}}</p>
+      <p>{{WHY_LANG}}</p>
+      <p>{{NOTES_LANG}}</p>
+      <p><a href="{{SOURCE_URL}}" target="_blank">{{SOURCE_LABEL_LANG}}</a></p>
+    </div>
+  </div>
+</div>
+<!-- End repeat -->
+
+</body>
+</html>
