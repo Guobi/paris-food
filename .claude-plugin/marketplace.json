@@ -1,5 +1,8 @@
 {
   "name": "paris-food",
+  "owner": {
+    "name": "Guobi Wu"
+  },
   "plugins": [
     {
       "name": "find-paris-restaurant",
