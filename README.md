@@ -1,6 +1,6 @@
 # find-paris-restaurant
 
-A Claude Code skill that finds and recommends restaurants in Paris based on a person's requirements, using live web search rather than a fixed dataset.
+A Claude Code plugin providing a skill that finds and recommends restaurants in Paris based on a person's requirements, using live web search rather than a fixed dataset.
 
 ## What it does
 
@@ -43,13 +43,14 @@ Claude Code copies the plugin into a local cache at `~/.claude/plugins/cache/` r
 
 ### Update
 
-When a new version is pushed to this repo:
+When a new version is pushed to this repo, refresh the marketplace catalog, then update the installed plugin:
 
 ```shell
 /plugin marketplace update paris-food
+/plugin update find-paris-restaurant@paris-food
 ```
 
-Claude Code checks the plugin's `version` field in `plugin.json` and pulls the latest if it changed.
+The first command pulls the latest `marketplace.json`/repo state; the second re-installs the plugin if its `version` field changed. (Background auto-updates also refresh the marketplace periodically, but installed plugins still need the explicit `/plugin update` — or auto-update, where enabled — to pick up a new version.)
 
 ### Working on this repo locally
 
